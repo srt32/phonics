@@ -43,7 +43,7 @@ class PhonicApp {
     
     initializeElements() {
         this.letterElement = document.getElementById('current-letter');
-        this.imageElement = document.getElementById('letter-image');
+        this.imageDisplay = document.querySelector('.image-display');
         this.descriptionElement = document.getElementById('image-description');
         this.startButton = document.getElementById('start-button');
         this.nextButton = document.getElementById('next-button');
@@ -113,9 +113,8 @@ class PhonicApp {
         
         this.letterElement.textContent = currentLetter.letter;
         
-        // Replace image with emoji display
-        const imageContainer = this.imageElement.parentNode;
-        imageContainer.innerHTML = `
+        // Update emoji and description
+        this.imageDisplay.innerHTML = `
             <div class="emoji-display">${currentLetter.emoji}</div>
             <p id="image-description" class="image-description">${currentLetter.word}</p>
         `;
