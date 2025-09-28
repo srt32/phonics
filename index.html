@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonics Learning - Fun with Letters!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Learn Your Letters! 🎵</h1>
+        </header>
+        
+        <main class="game-area">
+            <div class="letter-display">
+                <div class="letter-container">
+                    <span id="current-letter" class="letter">A</span>
+                </div>
+            </div>
+            
+            <div class="image-display">
+                <div class="emoji-display">🍎</div>
+                <p id="image-description" class="image-description">Apple</p>
+            </div>
+            
+            <div class="controls">
+                <button id="start-button" class="start-btn">🎤 Start Learning!</button>
+                <button id="next-button" class="next-btn" style="display: none;">Next Letter ➡️</button>
+            </div>
+            
+            <div class="status">
+                <p id="status-message" class="status-message">Click "Start Learning" to begin!</p>
+            </div>
+            
+            <div class="progress">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <p id="progress-text" class="progress-text">Letter 1 of 26</p>
+            </div>
+        </main>
+        
+        <!-- Celebration overlay -->
+        <div id="celebration" class="celebration-overlay">
+            <div class="fireworks"></div>
+            <div class="sparkles"></div>
+            <div class="success-message">
+                <h2>🎉 Great Job! 🎉</h2>
+                <p>You said it perfectly!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

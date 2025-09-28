@@ -1,0 +1,344 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+header h1 {
+    color: #4a5568;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Game area */
+.game-area {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Letter display */
+.letter-display {
+    display: flex;
+    justify-content: center;
+}
+
+.letter-container {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.letter-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+}
+
+.letter {
+    font-size: 6rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Image display */
+.image-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.emoji-display {
+    font-size: 8rem;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.emoji-display:hover {
+    transform: scale(1.1);
+}
+
+.image-description {
+    font-size: 1.5rem;
+    color: #4a5568;
+    font-weight: bold;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.start-btn, .next-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.start-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44b3a8);
+    color: white;
+}
+
+.start-btn:hover {
+    background: linear-gradient(45deg, #44b3a8, #3a9690);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.next-btn {
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    color: white;
+}
+
+.next-btn:hover {
+    background: linear-gradient(45deg, #f5576c, #f093fb);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Status */
+.status-message {
+    font-size: 1.3rem;
+    color: #4a5568;
+    padding: 15px;
+    background: rgba(74, 85, 104, 0.1);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* Progress */
+.progress {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    background: #e2e8f0;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #4ecdc4, #44b3a8);
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    color: #718096;
+    font-size: 1rem;
+}
+
+/* Celebration overlay */
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.celebration-overlay.show {
+    display: flex;
+}
+
+.success-message {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1001;
+}
+
+.success-message h2 {
+    font-size: 2.5rem;
+    color: #4ecdc4;
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    font-size: 1.3rem;
+    color: #4a5568;
+}
+
+/* Fireworks animation */
+.fireworks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.fireworks::before,
+.fireworks::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 0 3px #ff6b6b,
+        0 0 0 6px #4ecdc4,
+        0 0 0 9px #f093fb,
+        0 0 0 12px #feca57;
+    animation: fireworks 2s ease-out infinite;
+}
+
+.fireworks::before {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.fireworks::after {
+    top: 30%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+@keyframes fireworks {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+/* Sparkles animation */
+.sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sparkles::before,
+.sparkles::after {
+    content: '✨';
+    position: absolute;
+    font-size: 2rem;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.sparkles::before {
+    top: 40%;
+    left: 15%;
+    animation-delay: 0.2s;
+}
+
+.sparkles::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: 0.8s;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .letter-container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .letter {
+        font-size: 4rem;
+    }
+    
+    .emoji-display {
+        width: 120px;
+        height: 120px;
+        font-size: 6rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .start-btn, .next-btn {
+        width: 200px;
+    }
+}
